@@ -1,48 +1,29 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
+<!-- saved from url=(0042)file:///C:/Users/hp/Downloads/index_3.html -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>売上伝票 — 飯田校</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.0.0/dist/tabler-icons.min.css">
+<link rel="stylesheet" href="./index4_files/tabler-icons.min.css">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --bg: #ffffff;
-  --bg2: #f5f5f4;
-  --bg3: #ebebea;
-  --text: #1a1a18;
-  --text2: #6b6b67;
-  --text3: #9b9b97;
-  --border: rgba(0,0,0,0.12);
-  --border2: rgba(0,0,0,0.2);
-  --info-bg: #e6f1fb;
-  --info-text: #185fa5;
-  --info-border: rgba(24,95,165,0.3);
-  --success-bg: #eaf3de;
-  --success-text: #3b6d11;
-  --danger-bg: #fcebeb;
-  --danger-text: #a32d2d;
-  --radius: 8px;
-  --radius-lg: 12px;
+  --bg: #ffffff; --bg2: #f5f5f4; --bg3: #ebebea;
+  --text: #1a1a18; --text2: #6b6b67; --text3: #9b9b97;
+  --border: rgba(0,0,0,0.12); --border2: rgba(0,0,0,0.2);
+  --info-bg: #e6f1fb; --info-text: #185fa5; --info-border: rgba(24,95,165,0.3);
+  --success-bg: #eaf3de; --success-text: #3b6d11;
+  --danger-bg: #fcebeb; --danger-text: #a32d2d;
+  --radius: 8px; --radius-lg: 12px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #1c1c1a;
-    --bg2: #252523;
-    --bg3: #2e2e2b;
-    --text: #f0efec;
-    --text2: #a8a8a3;
-    --text3: #6b6b67;
-    --border: rgba(255,255,255,0.1);
-    --border2: rgba(255,255,255,0.2);
-    --info-bg: #0c447c;
-    --info-text: #b5d4f4;
-    --info-border: rgba(181,212,244,0.3);
-    --success-bg: #27500a;
-    --success-text: #c0dd97;
-    --danger-bg: #791f1f;
-    --danger-text: #f7c1c1;
+    --bg: #1c1c1a; --bg2: #252523; --bg3: #2e2e2b;
+    --text: #f0efec; --text2: #a8a8a3; --text3: #6b6b67;
+    --border: rgba(255,255,255,0.1); --border2: rgba(255,255,255,0.2);
+    --info-bg: #0c447c; --info-text: #b5d4f4; --info-border: rgba(181,212,244,0.3);
+    --success-bg: #27500a; --success-text: #c0dd97;
+    --danger-bg: #791f1f; --danger-text: #f7c1c1;
   }
 }
 body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: var(--bg3); color: var(--text); min-height: 100vh; padding: 1rem; }
@@ -60,7 +41,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .card { background: var(--bg); border: 0.5px solid var(--border); border-radius: var(--radius-lg); padding: 1rem 1.25rem; margin-bottom: 1rem; }
 .section-label { font-size: 11px; font-weight: 500; color: var(--text3); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
 .row { display: grid; gap: 10px; margin-bottom: 10px; }
-.row-2 { grid-template-columns: 1fr 1fr; }
 .row-3 { grid-template-columns: 1fr 1fr 1fr; }
 @media (max-width: 480px) { .row-3 { grid-template-columns: 1fr 1fr; } }
 .field label { display: block; font-size: 12px; color: var(--text2); margin-bottom: 4px; }
@@ -68,7 +48,6 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   width: 100%; font-size: 14px; padding: 7px 10px;
   border: 0.5px solid var(--border2); border-radius: var(--radius);
   background: var(--bg); color: var(--text); height: 36px;
-  transition: border-color 0.15s;
 }
 .field textarea { height: auto; resize: none; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--info-text); }
@@ -83,14 +62,14 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .item-subtotal { font-size: 13px; color: var(--text2); text-align: right; }
 .del-btn { width: 32px; height: 32px; border: 0.5px solid var(--border); border-radius: var(--radius); background: transparent; color: var(--text3); cursor: pointer; display: flex; align-items: center; justify-content: center; }
 .del-btn:hover { background: var(--danger-bg); color: var(--danger-text); }
-.add-btn { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text2); background: transparent; border: 0.5px dashed var(--border2); border-radius: var(--radius); padding: 7px 12px; cursor: pointer; width: 100%; margin-top: 4px; transition: background 0.15s; }
+.add-btn { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text2); background: transparent; border: 0.5px dashed var(--border2); border-radius: var(--radius); padding: 7px 12px; cursor: pointer; width: 100%; margin-top: 4px; }
 .add-btn:hover { background: var(--bg2); color: var(--text); }
 .totals { display: grid; grid-template-columns: 1fr auto; gap: 4px 16px; }
 .totals .lbl { font-size: 13px; color: var(--text2); text-align: right; padding: 3px 0; }
 .totals .val { font-size: 13px; color: var(--text); font-weight: 500; text-align: right; padding: 3px 0; min-width: 110px; }
 .totals .lbl-total { font-size: 15px; color: var(--text); font-weight: 500; text-align: right; padding: 6px 0 3px; border-top: 0.5px solid var(--border); margin-top: 4px; }
 .totals .val-total { font-size: 16px; font-weight: 500; text-align: right; padding: 6px 0 3px; border-top: 0.5px solid var(--border); margin-top: 4px; color: var(--info-text); }
-.save-btn { width: 100%; padding: 11px; font-size: 15px; font-weight: 500; background: var(--info-bg); color: var(--info-text); border: 0.5px solid var(--info-border); border-radius: var(--radius-lg); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1rem; transition: opacity 0.15s; }
+.save-btn { width: 100%; padding: 11px; font-size: 15px; font-weight: 500; background: var(--info-bg); color: var(--info-text); border: 0.5px solid var(--info-border); border-radius: var(--radius-lg); cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 1rem; }
 .save-btn:hover { opacity: 0.85; }
 .save-btn:disabled { opacity: 0.5; cursor: not-allowed; }
 .status-msg { font-size: 13px; padding: 10px 14px; border-radius: var(--radius); margin-bottom: 12px; display: none; }
@@ -98,40 +77,15 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 .status-msg.error { background: var(--danger-bg); color: var(--danger-text); display: block; }
 .history-item { display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 8px; padding: 12px 0; border-bottom: 0.5px solid var(--border); }
 .history-item:last-child { border-bottom: none; }
-.history-date { font-size: 12px; color: var(--text2); }
 .history-detail { font-size: 12px; color: var(--text2); margin-top: 3px; }
-.history-amount { font-size: 15px; font-weight: 500; color: var(--text); }
 .badge { font-size: 11px; padding: 2px 8px; border-radius: var(--radius); background: var(--success-bg); color: var(--success-text); margin-left: 6px; }
 .empty-state { text-align: center; padding: 2.5rem 1rem; color: var(--text3); font-size: 14px; }
 .empty-state i { font-size: 28px; display: block; margin-bottom: 8px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 .spinning { display: inline-block; animation: spin 1s linear infinite; }
-
-/* API KEY SETUP MODAL */
-.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 100; padding: 1rem; }
-.modal { background: var(--bg); border-radius: var(--radius-lg); border: 0.5px solid var(--border); padding: 1.5rem; max-width: 480px; width: 100%; }
-.modal h2 { font-size: 17px; font-weight: 500; margin-bottom: 8px; }
-.modal p { font-size: 13px; color: var(--text2); line-height: 1.6; margin-bottom: 14px; }
-.modal input { width: 100%; font-size: 13px; padding: 8px 10px; border: 0.5px solid var(--border2); border-radius: var(--radius); background: var(--bg); color: var(--text); margin-bottom: 10px; }
-.modal-btn { width: 100%; padding: 10px; font-size: 14px; font-weight: 500; background: var(--info-bg); color: var(--info-text); border: 0.5px solid var(--info-border); border-radius: var(--radius); cursor: pointer; }
-.modal-note { font-size: 11px; color: var(--text3); margin-top: 10px; line-height: 1.6; }
 </style>
 </head>
 <body>
-
-<div id="api-modal" class="modal-overlay">
-  <div class="modal">
-    <h2><i class="ti ti-key" style="font-size:18px;vertical-align:-2px;margin-right:6px"></i>初回設定</h2>
-    <p>このアプリはAnthropicのAPIを使ってGoogle Driveにデータを保存します。Anthropic APIキーを入力してください。</p>
-    <input type="password" id="api-key-input" placeholder="sk-ant-..." autocomplete="off">
-    <button class="modal-btn" onclick="saveApiKey()">保存して開始</button>
-    <p class="modal-note">
-      ※ APIキーはこのブラウザのローカルストレージにのみ保存されます。外部に送信されることはありません。<br>
-      ※ APIキーは <a href="https://console.anthropic.com" target="_blank" style="color:var(--info-text)">console.anthropic.com</a> で取得できます。
-    </p>
-  </div>
-</div>
-
 <div class="app">
   <div class="header">
     <div class="header-icon"><i class="ti ti-receipt"></i></div>
@@ -142,30 +96,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
   </div>
 
   <div class="tabs">
-    <button class="tab active" onclick="switchTab('input')"><i class="ti ti-edit" style="font-size:14px;vertical-align:-1px;margin-right:4px"></i>入力</button>
-    <button class="tab" onclick="switchTab('history')"><i class="ti ti-history" style="font-size:14px;vertical-align:-1px;margin-right:4px"></i>履歴</button>
-    <button class="tab" onclick="switchTab('settings')"><i class="ti ti-settings" style="font-size:14px;vertical-align:-1px;margin-right:4px"></i>設定</button>
+    <button class="tab active" onclick="switchTab(&#39;input&#39;)"><i class="ti ti-edit" style="font-size:14px;vertical-align:-1px;margin-right:4px"></i>入力</button>
+    <button class="tab" onclick="switchTab(&#39;history&#39;)"><i class="ti ti-history" style="font-size:14px;vertical-align:-1px;margin-right:4px"></i>履歴</button>
   </div>
 
   <div id="status-msg" class="status-msg"></div>
 
-  <!-- 入力タブ -->
   <div id="tab-input" class="section active">
     <div class="card">
       <div class="section-label">基本情報</div>
       <div class="row row-3">
-        <div class="field">
-          <label>日付</label>
-          <input type="date" id="slip-date">
-        </div>
-        <div class="field">
-          <label>担当者名</label>
-          <input type="text" id="staff-name" placeholder="例：田中">
-        </div>
-        <div class="field">
-          <label>前日残高</label>
-          <input type="number" id="prev-balance" placeholder="0" min="0" oninput="calcTotal()">
-        </div>
+        <div class="field"><label>日付</label><input type="date" id="slip-date"></div>
+        <div class="field"><label>担当者名</label><input type="text" id="staff-name" placeholder="例：田中"></div>
+        <div class="field"><label>前日残高</label><input type="number" id="prev-balance" placeholder="0" min="0" oninput="calcTotal()"></div>
       </div>
     </div>
 
@@ -178,10 +121,19 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
         <span style="text-align:right">小計</span>
         <span></span>
       </div>
-      <div id="items-list"></div>
-      <button class="add-btn" onclick="addItem()">
-        <i class="ti ti-plus" style="font-size:14px"></i>品目を追加
-      </button>
+      <div id="items-list">
+    <div class="item-row">
+      <select onchange="onNameChange(1, this.value)">
+        <option value="">品名を選択</option>
+        <option value="入会金" data-price="2500">入会金</option><option value="ロングレッスン　シングル" data-price="1750">ロングレッスン　シングル</option><option value="ショートレッスン　シングル" data-price="1250">ショートレッスン　シングル</option><option value="ビジター" data-price="2200">ビジター</option><option value="その他" data-price="0">その他</option>
+      </select>
+      <input type="number" value="1" min="1" style="text-align:center" onchange="onQtyChange(1,this.value)">
+      <input type="number" value="" placeholder="0" style="text-align:right" onchange="onPriceChange(1,this.value)">
+      <span class="item-subtotal">¥0</span>
+      <button class="del-btn" onclick="removeItem(1)"><i class="ti ti-x" style="font-size:14px"></i></button>
+    </div>
+  </div>
+      <button class="add-btn" onclick="addItem()"><i class="ti ti-plus" style="font-size:14px"></i>品目を追加</button>
     </div>
 
     <div class="card">
@@ -195,45 +147,25 @@ body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; b
 
     <div class="card">
       <div class="section-label">メモ・備考</div>
-      <div class="field">
-        <textarea id="memo" rows="2" placeholder="不明金・備考など"></textarea>
-      </div>
+      <div class="field"><textarea id="memo" rows="2" placeholder="不明金・備考など"></textarea></div>
     </div>
 
-    <button class="save-btn" id="save-btn" onclick="saveToGoogleDrive()">
-      <i class="ti ti-brand-google-drive"></i>
-      Google Driveに保存
+    <button class="save-btn" id="save-btn" onclick="saveData()">
+      <i class="ti ti-brand-google-drive"></i>Google Driveに保存
     </button>
   </div>
 
-  <!-- 履歴タブ -->
   <div id="tab-history" class="section">
     <div class="card">
       <div class="section-label">保存済み伝票</div>
-      <div id="history-list">
-        <div class="empty-state"><i class="ti ti-inbox"></i>まだ伝票がありません</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 設定タブ -->
-  <div id="tab-settings" class="section">
-    <div class="card">
-      <div class="section-label">APIキー</div>
-      <div class="field">
-        <label>Anthropic APIキー</label>
-        <input type="password" id="settings-api-key" placeholder="sk-ant-...">
-      </div>
-      <button onclick="updateApiKey()" style="padding:8px 16px;font-size:13px;border:0.5px solid var(--border2);border-radius:var(--radius);background:transparent;color:var(--text);cursor:pointer;margin-top:4px">更新する</button>
-    </div>
-    <div class="card">
-      <div class="section-label">品目プリセット管理</div>
-      <div id="preset-list"></div>
+      <div id="history-list"><div class="empty-state"><i class="ti ti-inbox"></i>まだ伝票がありません</div></div>
     </div>
   </div>
 </div>
 
 <script>
+const GAS_URL = "https://script.google.com/macros/s/AKfycbwFSQv7YDmV53L-eDAgA9oodX74_sLeTZeD869adXfXMKIlrPft1XvQXz9D6cWf6cqn/exec";
+
 const PRESETS = [
   { name: "入会金", price: 2500 },
   { name: "ロングレッスン　シングル", price: 1750 },
@@ -246,31 +178,9 @@ let items = [];
 let itemCounter = 0;
 
 function init() {
-  const apiKey = localStorage.getItem("anthropic_api_key");
-  if (apiKey) {
-    document.getElementById("api-modal").style.display = "none";
-    document.getElementById("settings-api-key").value = apiKey;
-  }
-  const today = new Date();
-  document.getElementById("slip-date").value = today.toISOString().split("T")[0];
+  document.getElementById("slip-date").value = new Date().toISOString().split("T")[0];
   addItem();
   renderHistory();
-  renderPresets();
-}
-
-function saveApiKey() {
-  const key = document.getElementById("api-key-input").value.trim();
-  if (!key.startsWith("sk-")) { alert("正しいAPIキーを入力してください（sk-ant-で始まります）"); return; }
-  localStorage.setItem("anthropic_api_key", key);
-  document.getElementById("api-modal").style.display = "none";
-  document.getElementById("settings-api-key").value = key;
-}
-
-function updateApiKey() {
-  const key = document.getElementById("settings-api-key").value.trim();
-  if (!key.startsWith("sk-")) { alert("正しいAPIキーを入力してください"); return; }
-  localStorage.setItem("anthropic_api_key", key);
-  showStatus("APIキーを更新しました", "success");
 }
 
 function addItem() {
@@ -287,8 +197,7 @@ function removeItem(id) {
 }
 
 function renderItems() {
-  const list = document.getElementById("items-list");
-  list.innerHTML = items.map(item => `
+  document.getElementById("items-list").innerHTML = items.map(item => `
     <div class="item-row">
       <select onchange="onNameChange(${item.id}, this.value)">
         <option value="">品名を選択</option>
@@ -328,6 +237,16 @@ function switchTab(tab) {
   if (tab==="history") renderHistory();
 }
 
+function getHistory() {
+  try { return JSON.parse(localStorage.getItem("slips_iida")||"[]"); } catch { return []; }
+}
+
+function saveHistory(slip) {
+  const h = getHistory();
+  h.unshift(slip);
+  localStorage.setItem("slips_iida", JSON.stringify(h.slice(0,100)));
+}
+
 function renderHistory() {
   const history = getHistory();
   const list = document.getElementById("history-list");
@@ -342,38 +261,15 @@ function renderHistory() {
           <span style="font-size:14px;font-weight:500">${s.date}</span>
           ${s.staff?`<span style="font-size:12px;color:var(--text2)">${s.staff}</span>`:""}
           <span class="badge">保存済</span>
-          ${s.url?`<a href="${s.url}" target="_blank" style="font-size:11px;color:var(--info-text)"><i class="ti ti-external-link" style="font-size:12px"></i></a>`:""}
         </div>
         <div class="history-detail">${s.items.filter(i=>i.name).map(i=>`${i.name}×${i.qty}`).join("、")||"明細なし"}</div>
       </div>
-      <span class="history-amount">¥${s.grand.toLocaleString()}</span>
+      <span style="font-size:15px;font-weight:500">¥${s.grand.toLocaleString()}</span>
     </div>
   `).join("");
 }
 
-function getHistory() {
-  try { return JSON.parse(localStorage.getItem("slips_iida")||"[]"); } catch { return []; }
-}
-
-function saveHistory(slip) {
-  const h = getHistory();
-  h.unshift(slip);
-  localStorage.setItem("slips_iida", JSON.stringify(h.slice(0,100)));
-}
-
-function renderPresets() {
-  document.getElementById("preset-list").innerHTML = PRESETS.map(p=>`
-    <div style="display:flex;justify-content:space-between;padding:6px 0;border-bottom:0.5px solid var(--border);font-size:13px">
-      <span>${p.name}</span>
-      <span style="color:var(--text2)">¥${p.price.toLocaleString()}</span>
-    </div>
-  `).join("")+'<p style="font-size:12px;color:var(--text3);margin-top:10px">品目の変更はソースを編集してください</p>';
-}
-
-async function saveToGoogleDrive() {
-  const apiKey = localStorage.getItem("anthropic_api_key");
-  if (!apiKey) { document.getElementById("api-modal").style.display="flex"; return; }
-
+async function saveData() {
   const date = document.getElementById("slip-date").value;
   const staff = document.getElementById("staff-name").value;
   const prev = parseInt(document.getElementById("prev-balance").value)||0;
@@ -386,54 +282,37 @@ async function saveToGoogleDrive() {
   const sales = items.reduce((s,i)=>s+(i.qty*i.price),0);
   const grand = sales + prev;
 
-  const btn = document.getElementById("save-btn");
-  btn.disabled = true;
-  btn.innerHTML = '<i class="ti ti-loader spinning"></i>保存中...';
-
   const csvRows = [
     ["日付","担当者","品名","数量","単価","小計","前日残高","売上合計","総合計","メモ"],
     ...validItems.map((item,i)=>[
       i===0?date:"", i===0?staff:"",
-      item.name,item.qty,item.price,item.qty*item.price,
+      item.name, item.qty, item.price, item.qty*item.price,
       i===0?prev:"", i===0?sales:"", i===0?grand:"", i===0?memo:""
     ])
   ];
   const csv = csvRows.map(r=>r.map(v=>`"${String(v).replace(/"/g,'""')}"`).join(",")).join("\n");
 
+  const btn = document.getElementById("save-btn");
+  btn.disabled = true;
+  btn.innerHTML = '<i class="ti ti-loader spinning"></i>保存中...';
+
   try {
-    const res = await fetch("https://api.anthropic.com/v1/messages", {
+    const res = await fetch(GAS_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" },
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 1000,
-        system: `あなたはGoogle DriveのMCPを使いCSVファイルを保存するアシスタントです。
-ファイル名: "売上伝票_飯田校_${date}.csv"
-保存完了後、以下のJSONのみ返してください（他のテキスト不要）:
-{"status":"success","fileId":"ファイルID","url":"https://drive.google.com/file/d/ID/view"}
-失敗時: {"status":"error","message":"理由"}`,
-        messages: [{ role: "user", content: `以下のCSVをGoogle Driveに保存:\n\n${csv}` }],
-        mcp_servers: [{ type: "url", url: "https://drivemcp.googleapis.com/mcp/v1", name: "google-drive" }]
-      })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ date, csv })
     });
-
-    if (!res.ok) throw new Error(`API error: ${res.status}`);
     const data = await res.json();
-    const text = (data.content||[]).filter(c=>c.type==="text").map(c=>c.text).join("");
-    let result;
-    try { result = JSON.parse(text.replace(/```json|```/g,"").trim()); }
-    catch { result = { status: text.includes("success")||text.includes("保存")?"success":"error", message: text }; }
 
-    if (result.status==="success") {
-      saveHistory({ date, staff, items: validItems, prev, sales, grand, memo, url: result.url });
-      const link = result.url ? ` — <a href="${result.url}" target="_blank" style="color:inherit;text-decoration:underline">Driveで開く ↗</a>` : "";
-      showStatus(`✓ ${date} の伝票を保存しました${link}`, "success");
+    if (data.status === "success") {
+      saveHistory({ date, staff, items: validItems, prev, sales, grand, memo });
+      showStatus(`✓ ${date} の伝票をGoogle Driveに保存しました`, "success");
       resetForm();
     } else {
-      showStatus("保存に失敗しました: " + (result.message||"不明なエラー"), "error");
+      showStatus("保存に失敗しました: " + (data.message||"不明なエラー"), "error");
     }
   } catch(e) {
-    showStatus("エラー: " + e.message, "error");
+    showStatus("通信エラー: " + e.message, "error");
   }
 
   btn.disabled = false;
@@ -458,5 +337,6 @@ function showStatus(msg, type) {
 
 init();
 </script>
-</body>
-</html>
+
+
+</body></html>
