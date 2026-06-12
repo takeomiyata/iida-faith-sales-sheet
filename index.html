@@ -29,40 +29,31 @@
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { background: var(--bg); color: var(--text); font-family: 'Hiragino Sans', 'Noto Sans JP', sans-serif; font-size: 14px; line-height: 1.6; }
 
-  /* ── Header ── */
   header { background: var(--primary); color: #fff; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; box-shadow: var(--shadow-md); }
   header h1 { font-size: 17px; font-weight: 700; letter-spacing: .02em; }
   header .subtitle { font-size: 12px; opacity: .8; }
 
-  /* ── Tabs ── */
   .tabs { display: flex; background: var(--surface); border-bottom: 2px solid var(--border-light); }
   .tab { flex: 1; padding: 12px; text-align: center; font-size: 13px; font-weight: 600; color: var(--text3); cursor: pointer; border: none; background: none; transition: color .15s, border-bottom .15s; border-bottom: 2px solid transparent; margin-bottom: -2px; }
   .tab.active { color: var(--primary); border-bottom-color: var(--primary); }
 
-  /* ── Layout ── */
   .page { display: none; padding: 16px; max-width: 640px; margin: 0 auto; }
   .page.active { display: block; }
 
-  /* ── Card ── */
   .card { background: var(--surface); border: 1px solid var(--border-light); border-radius: var(--radius); box-shadow: var(--shadow); margin-bottom: 14px; overflow: hidden; }
   .card-header { background: var(--surface2); padding: 10px 14px; font-size: 12px; font-weight: 700; color: var(--text2); text-transform: uppercase; letter-spacing: .06em; border-bottom: 1px solid var(--border-light); display: flex; align-items: center; gap: 6px; }
   .card-body { padding: 14px; }
 
-  /* ── Key Badge ── */
   .key-badge { background: var(--key-bg); color: var(--key-text); font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 20px; letter-spacing: .04em; font-family: monospace; }
 
-  /* ── Form elements ── */
   .field { margin-bottom: 12px; }
   .field label { display: block; font-size: 12px; font-weight: 600; color: var(--text2); margin-bottom: 4px; }
   .field input, .field select, .field textarea {
     width: 100%; padding: 9px 11px; border: 1px solid var(--border);
     border-radius: var(--radius-sm); font-size: 14px; color: var(--text);
-    background: #fff; transition: border-color .15s, box-shadow .15s;
-    -webkit-appearance: none;
+    background: #fff; transition: border-color .15s, box-shadow .15s; -webkit-appearance: none;
   }
-  .field input:focus, .field select:focus, .field textarea:focus {
-    outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,86,219,.12);
-  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(26,86,219,.12); }
   .field textarea { resize: vertical; min-height: 64px; }
   .field .hint { font-size: 11px; color: var(--text3); margin-top: 3px; }
 
@@ -72,30 +63,32 @@
   .date-nav button { padding: 8px 10px; border: 1px solid var(--border); background: var(--surface); border-radius: var(--radius-sm); cursor: pointer; font-size: 14px; color: var(--text2); }
   .date-nav button:hover { background: var(--surface2); }
 
-  /* ── Items table ── */
-  .items-head { display: grid; grid-template-columns: 1fr 60px 80px 80px 32px; gap: 4px; font-size: 11px; font-weight: 700; color: var(--text3); padding: 0 0 6px; text-transform: uppercase; letter-spacing: .04em; }
-  .item-row { display: grid; grid-template-columns: 1fr 60px 80px 80px 32px; gap: 4px; margin-bottom: 6px; align-items: center; }
-  .item-row input, .item-row select { padding: 7px 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; background: #fff; width: 100%; }
-  .item-row input:focus, .item-row select:focus { outline: none; border-color: var(--primary); }
-  .item-row .subtotal { font-size: 13px; font-weight: 600; color: var(--text2); text-align: right; }
-  .del-btn { background: none; border: none; color: var(--text3); cursor: pointer; font-size: 16px; padding: 4px; line-height: 1; }
+  /* ── Items ── */
+  .items-head { display: grid; grid-template-columns: 1fr 54px 86px 32px; gap: 4px; font-size: 11px; font-weight: 700; color: var(--text3); padding: 0 0 6px; text-transform: uppercase; letter-spacing: .04em; }
+  .item-row { display: grid; grid-template-columns: 1fr 54px 86px 32px; gap: 4px; margin-bottom: 6px; align-items: start; }
+  .item-row select { padding: 7px 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; background: #fff; width: 100%; }
+  .item-row select:focus { outline: none; border-color: var(--primary); }
+  .item-col { display: flex; flex-direction: column; gap: 3px; }
+  .item-col input { padding: 7px 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; width: 100%; text-align: right; }
+  .item-col input:focus { outline: none; border-color: var(--primary); }
+  .item-col .subtotal-disp { font-size: 12px; font-weight: 600; color: var(--text2); text-align: right; padding: 2px 4px; }
+  .item-col input[readonly] { background: var(--surface2); color: var(--text3); }
+  .del-btn { background: none; border: none; color: var(--text3); cursor: pointer; font-size: 16px; padding: 6px; line-height: 1; align-self: start; margin-top: 4px; }
   .del-btn:hover { color: var(--danger); }
   .add-btn { background: none; border: 1px dashed var(--border); border-radius: var(--radius-sm); color: var(--primary); font-size: 13px; font-weight: 600; padding: 8px; width: 100%; cursor: pointer; margin-top: 4px; transition: background .15s; }
   .add-btn:hover { background: var(--key-bg); }
 
-  /* ── Totals ── */
   .totals { background: var(--surface2); border-radius: var(--radius-sm); padding: 12px 14px; }
   .total-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; font-size: 14px; color: var(--text2); }
   .total-row.grand { font-size: 16px; font-weight: 700; color: var(--text); border-top: 1px solid var(--border); margin-top: 6px; padding-top: 10px; }
   .total-row .amount { font-variant-numeric: tabular-nums; }
 
-  /* ── Save button ── */
   .save-btn { width: 100%; padding: 13px; background: var(--primary); color: #fff; border: none; border-radius: var(--radius); font-size: 15px; font-weight: 700; cursor: pointer; letter-spacing: .02em; transition: background .15s, transform .1s; }
   .save-btn:hover { background: var(--primary-dark); }
   .save-btn:active { transform: scale(.98); }
   .save-btn:disabled { background: var(--border); cursor: not-allowed; }
 
-  /* ── Kenzan (検算) table ── */
+  /* ── Kenzan ── */
   .kenzan-table { width: 100%; border-collapse: collapse; font-size: 13px; }
   .kenzan-table th, .kenzan-table td { border: 1px solid var(--border); padding: 7px 10px; }
   .kenzan-table th { background: var(--surface2); font-weight: 700; text-align: center; font-size: 12px; color: var(--text2); }
@@ -110,7 +103,7 @@
   .kenzan-table td input.memo-input { width: 100%; border: none; background: transparent; font-size: 12px; padding: 2px 4px; }
   .kenzan-table td input.memo-input:focus { outline: none; background: var(--key-bg); border-radius: 3px; }
 
-  /* ── Yoke section ── */
+  /* ── Yoke ── */
   .yoke-items-head { display: grid; grid-template-columns: 80px 60px 80px 80px 32px; gap: 4px; font-size: 11px; font-weight: 700; color: var(--text3); padding: 0 0 6px; text-transform: uppercase; letter-spacing: .04em; }
   .yoke-item-row { display: grid; grid-template-columns: 80px 60px 80px 80px 32px; gap: 4px; margin-bottom: 6px; align-items: center; }
   .yoke-item-row select, .yoke-item-row input { padding: 7px 8px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; background: #fff; width: 100%; }
@@ -124,35 +117,49 @@
   .history-item .hi-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; }
   .history-item .hi-date { font-weight: 700; font-size: 15px; }
   .history-item .hi-staff { font-size: 12px; color: var(--text3); margin-top: 2px; }
-  .history-item .hi-key { }
   .history-item .hi-amounts { display: flex; gap: 12px; flex-wrap: wrap; font-size: 13px; padding-top: 8px; border-top: 1px solid var(--border-light); }
   .history-item .hi-amounts span { color: var(--text3); }
   .history-item .hi-amounts strong { color: var(--text); }
   .empty-state { text-align: center; color: var(--text3); padding: 40px 20px; font-size: 14px; }
 
   /* ── Settings ── */
+  .settings-section-title { font-size: 11px; font-weight: 700; color: var(--text3); text-transform: uppercase; letter-spacing: .06em; padding: 4px 0 8px; margin-top: 4px; }
+  /* staff list */
   .staff-list { list-style: none; }
   .staff-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 14px; border-bottom: 1px solid var(--border-light); font-size: 14px; }
   .staff-item:last-child { border-bottom: none; }
   .staff-item button { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 18px; line-height: 1; padding: 2px 6px; }
-  .add-staff-row { display: flex; gap: 8px; padding: 10px 14px; }
-  .add-staff-row input { flex: 1; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; }
-  .add-staff-row input:focus { outline: none; border-color: var(--primary); }
-  .add-staff-row button { padding: 8px 14px; background: var(--primary); color: #fff; border: none; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer; }
+  .add-row { display: flex; gap: 8px; padding: 10px 14px; }
+  .add-row input { flex: 1; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 14px; }
+  .add-row input:focus { outline: none; border-color: var(--primary); }
+  .add-row button { padding: 8px 14px; background: var(--primary); color: #fff; border: none; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer; white-space: nowrap; }
+  /* item master */
+  .item-master-list { list-style: none; }
+  .item-master-row { display: flex; align-items: center; gap: 8px; padding: 8px 14px; border-bottom: 1px solid var(--border-light); font-size: 13px; }
+  .item-master-row:last-child { border-bottom: none; }
+  .item-master-row .im-name { flex: 1; font-weight: 600; }
+  .item-master-row .im-price { color: var(--primary); font-variant-numeric: tabular-nums; min-width: 70px; text-align: right; }
+  .item-master-row .im-tag { font-size: 11px; background: #fef3c7; color: #92400e; border-radius: 10px; padding: 1px 7px; }
+  .item-master-row button { background: none; border: none; color: var(--text3); cursor: pointer; font-size: 16px; padding: 2px 4px; }
+  .item-master-row button:hover { color: var(--danger); }
+  .add-item-form { padding: 10px 14px; border-top: 1px solid var(--border-light); display: flex; flex-direction: column; gap: 8px; }
+  .add-item-form .form-row { display: flex; gap: 8px; }
+  .add-item-form input { flex: 1; padding: 8px 10px; border: 1px solid var(--border); border-radius: var(--radius-sm); font-size: 13px; }
+  .add-item-form input:focus { outline: none; border-color: var(--primary); }
+  .add-item-form button { padding: 8px 14px; background: var(--primary); color: #fff; border: none; border-radius: var(--radius-sm); font-weight: 600; cursor: pointer; white-space: nowrap; }
+  .add-item-form label { font-size: 12px; color: var(--text3); display: flex; align-items: center; gap: 6px; cursor: pointer; }
 
-  /* ── Toast ── */
+  /* ── Toast / Status ── */
   #toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(20px); background: #1a1a2e; color: #fff; padding: 10px 20px; border-radius: 24px; font-size: 13px; font-weight: 600; opacity: 0; transition: opacity .25s, transform .25s; pointer-events: none; z-index: 999; white-space: nowrap; }
   #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
   #toast.error { background: var(--danger); }
   #toast.success { background: var(--accent); }
-
-  /* ── Status bar ── */
   .status-bar { background: var(--surface2); border: 1px solid var(--border-light); border-radius: var(--radius-sm); padding: 8px 12px; font-size: 12px; color: var(--text3); margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
   .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
   .status-dot.warn { background: var(--warn); }
 
   @media (max-width: 400px) {
-    .items-head, .item-row { grid-template-columns: 1fr 50px 70px 70px 28px; }
+    .items-head, .item-row { grid-template-columns: 1fr 48px 76px 28px; }
     .yoke-items-head, .yoke-item-row { grid-template-columns: 70px 50px 70px 70px 28px; }
   }
 </style>
@@ -172,38 +179,30 @@
   <button class="tab" onclick="switchTab('settings')">⚙️ 設定</button>
 </div>
 
-<!-- ══════════════════ INPUT PAGE ══════════════════ -->
+<!-- ══ INPUT ══ -->
 <div id="page-input" class="page active">
-
-  <!-- Status -->
   <div class="status-bar" id="statusBar">
     <div class="status-dot" id="statusDot"></div>
     <span id="statusText">読み込み中...</span>
   </div>
 
-  <!-- 基本情報 -->
   <div class="card">
-    <div class="card-header">
-      🧾 基本情報
-      <span class="key-badge" id="keyBadge">—</span>
-    </div>
+    <div class="card-header">🧾 基本情報 <span class="key-badge" id="keyBadge">—</span></div>
     <div class="card-body">
       <div class="field">
         <label>日付</label>
         <div class="date-row">
           <input type="date" id="date">
           <div class="date-nav">
-            <button onclick="shiftDate(-1)" title="前日">◀</button>
-            <button onclick="setToday()" title="今日">今日</button>
-            <button onclick="shiftDate(1)" title="翌日">▶</button>
+            <button onclick="shiftDate(-1)">◀</button>
+            <button onclick="setToday()">今日</button>
+            <button onclick="shiftDate(1)">▶</button>
           </div>
         </div>
       </div>
       <div class="field">
         <label>担当者</label>
-        <select id="staff">
-          <option value="">— 選択してください —</option>
-        </select>
+        <select id="staff"><option value="">— 選択してください —</option></select>
       </div>
       <div class="field">
         <label>前回残高</label>
@@ -213,12 +212,11 @@
     </div>
   </div>
 
-  <!-- 売上明細 -->
   <div class="card">
     <div class="card-header">💴 売上明細</div>
     <div class="card-body">
       <div class="items-head">
-        <span>品名</span><span style="text-align:center">数量</span><span style="text-align:right">単価</span><span style="text-align:right">小計</span><span></span>
+        <span>品名</span><span style="text-align:center">数量</span><span style="text-align:right">単価 / 小計</span><span></span>
       </div>
       <div id="itemsContainer"></div>
       <button class="add-btn" onclick="addItem()">＋ 品目を追加</button>
@@ -230,7 +228,6 @@
     </div>
   </div>
 
-  <!-- メモ -->
   <div class="card">
     <div class="card-header">📝 メモ・備考</div>
     <div class="card-body">
@@ -238,48 +235,36 @@
     </div>
   </div>
 
-  <!-- ══ 検算セクション ══ -->
   <div class="card">
     <div class="card-header">🔢 検算（金種確認）</div>
     <div class="card-body">
       <table class="kenzan-table">
-        <thead>
-          <tr><th>貨幣種別</th><th>数量</th><th>小計</th><th>備考</th></tr>
-        </thead>
-        <tbody id="kenzanBody">
-          <!-- JS で生成 -->
-        </tbody>
+        <thead><tr><th>貨幣種別</th><th>数量</th><th>小計</th><th>備考</th></tr></thead>
+        <tbody id="kenzanBody"></tbody>
         <tfoot>
           <tr class="total-row-k">
-            <td class="label">合計②</td>
-            <td></td>
-            <td class="subtotal" id="kenzanTotal">¥0</td>
-            <td></td>
+            <td class="label">合計②</td><td></td>
+            <td class="subtotal" id="kenzanTotal">¥0</td><td></td>
           </tr>
           <tr class="fumei">
-            <td class="label">不明金<br><small>②−①</small></td>
-            <td></td>
+            <td class="label">不明金<br><small>②−①</small></td><td></td>
             <td class="subtotal" id="fumeiVal">¥0</td>
             <td class="memo-td"><input class="memo-input" id="fumeiMemo" placeholder="メモ"></td>
           </tr>
           <tr class="yoke">
-            <td class="label">よけ③</td>
-            <td></td>
+            <td class="label">よけ③</td><td></td>
             <td class="subtotal" id="yokeTotal">¥0</td>
             <td class="memo-td"><input class="memo-input" id="yokeName" placeholder="氏名"></td>
           </tr>
           <tr class="zankin">
-            <td class="label">残金④<br><small>②−③</small></td>
-            <td></td>
-            <td class="subtotal" id="zankinVal">¥0</td>
-            <td></td>
+            <td class="label">残金④<br><small>②−③</small></td><td></td>
+            <td class="subtotal" id="zankinVal">¥0</td><td></td>
           </tr>
         </tfoot>
       </table>
     </div>
   </div>
 
-  <!-- ══ よけ（移動金額）セクション ══ -->
   <div class="card">
     <div class="card-header" style="background:#d1fae5; color:#065f46">💼 よけ（別途移動する金額）</div>
     <div class="card-body">
@@ -291,41 +276,63 @@
         <span>金種</span><span style="text-align:center">枚数</span><span style="text-align:right">単価</span><span style="text-align:right">小計</span><span></span>
       </div>
       <div id="yokeItemsContainer"></div>
-      <button class="add-btn" style="border-color: var(--accent); color: var(--accent)" onclick="addYokeItem()">＋ 金種を追加</button>
+      <button class="add-btn" style="border-color:var(--accent);color:var(--accent)" onclick="addYokeItem()">＋ 金種を追加</button>
       <div class="totals" style="margin-top:12px; background:#d1fae5">
         <div class="total-row"><span>よけ合計③</span><span class="amount" id="yokeTotalDisp">¥0</span></div>
-        <div class="total-row grand" style="color: var(--accent)"><span>残金④（次回繰越）</span><span class="amount" id="zankinDisp">¥0</span></div>
+        <div class="total-row grand" style="color:var(--accent)"><span>残金④（次回繰越）</span><span class="amount" id="zankinDisp">¥0</span></div>
       </div>
     </div>
   </div>
 
-  <!-- 保存ボタン -->
   <button class="save-btn" id="saveBtn" onclick="save()">📤 Google Driveに保存</button>
-  <div style="height: 40px"></div>
+  <div style="height:40px"></div>
 </div>
 
-<!-- ══════════════════ HISTORY PAGE ══════════════════ -->
+<!-- ══ HISTORY ══ -->
 <div id="page-history" class="page">
   <div id="historyList"><div class="empty-state">まだ伝票がありません</div></div>
 </div>
 
-<!-- ══════════════════ SETTINGS PAGE ══════════════════ -->
+<!-- ══ SETTINGS ══ -->
 <div id="page-settings" class="page">
+
+  <!-- 担当者マスタ -->
   <div class="card">
     <div class="card-header">👤 担当者マスタ</div>
     <ul class="staff-list" id="staffList"></ul>
-    <div class="add-staff-row">
+    <div class="add-row">
       <input type="text" id="newStaffInput" placeholder="担当者名を入力" onkeydown="if(event.key==='Enter')addStaff()">
       <button onclick="addStaff()">追加</button>
     </div>
-    <div style="padding:8px 14px 12px; font-size:12px; color:var(--text3)">
-      ※ スプレッドシートのマスタシートとも同期されます
+    <div style="padding:4px 14px 12px; font-size:12px; color:var(--text3)">
+      ※ スプレッドシートのスタッフマスタシートとも同期されます
     </div>
   </div>
+
+  <!-- 品目マスタ -->
+  <div class="card">
+    <div class="card-header">🏷️ 品目マスタ（単価設定）</div>
+    <ul class="item-master-list" id="itemMasterList"></ul>
+    <div class="add-item-form">
+      <div class="settings-section-title">品目を追加</div>
+      <div class="form-row">
+        <input type="text" id="newItemName" placeholder="品目名（例：月謝10回）">
+        <input type="number" id="newItemPrice" placeholder="単価" min="0" style="max-width:110px">
+        <button onclick="addItemMaster()">追加</button>
+      </div>
+      <label>
+        <input type="checkbox" id="newItemFree"> 「その他」扱い（単価を手入力）
+      </label>
+    </div>
+    <div style="padding:4px 14px 12px; font-size:12px; color:var(--text3)">
+      ※「その他」は単価欄が自由入力になります
+    </div>
+  </div>
+
   <div class="card">
     <div class="card-header">ℹ️ アプリ情報</div>
     <div class="card-body" style="font-size:13px; color:var(--text2); line-height:2">
-      <div>バージョン: 2.0.0</div>
+      <div>バージョン: 2.1.0</div>
       <div>保存先: Google Drive（スプレッドシート一括管理）</div>
     </div>
   </div>
@@ -341,18 +348,36 @@ const GAS_URL = 'https://script.google.com/macros/s/AKfycbwFSQv7YDmV53L-eDAgA9oo
 
 const DENOMINATIONS = [10000, 5000, 2000, 1000, 500, 100, 50, 10, 5, 1];
 const DENOM_LABELS  = ['1万円','5千円','2千円','千円','500円','100円','50円','10円','5円','1円'];
-const ITEM_OPTIONS  = ['入会金','ロングレッスン シングル','ショートレッスン シングル','ビジター','その他'];
+
+// デフォルト品目マスタ（画像の料金表より）
+const DEFAULT_ITEMS = [
+  { name: 'トライアル',               price: 0,     free: false },
+  { name: 'ビジター',                 price: 2200,  free: false },
+  { name: '入会金',                   price: 2500,  free: false },
+  { name: '更新/会員証再発行',        price: 1000,  free: false },
+  { name: 'ショート シングルチケット', price: 1250,  free: false },
+  { name: 'ショート 月謝4回',         price: 4840,  free: false },
+  { name: 'ショート 月謝6回',         price: 7260,  free: false },
+  { name: 'ショート 月謝8回',         price: 9240,  free: false },
+  { name: 'ロング シングルチケット',  price: 1750,  free: false },
+  { name: 'ロング 月謝4回',           price: 6600,  free: false },
+  { name: 'ロング 月謝6回',           price: 9900,  free: false },
+  { name: 'ロング 月謝8回',           price: 12320, free: false },
+  { name: '月謝受け放題',             price: 13800, free: false },
+  { name: 'その他',                   price: 0,     free: true  },
+];
 
 // ══════════════════════════════════════
-//  STATE (localStorage)
+//  STATE
 // ══════════════════════════════════════
 function loadState(key, def) {
   try { const v = localStorage.getItem(key); return v ? JSON.parse(v) : def; } catch { return def; }
 }
 function saveState(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 
-let staffList = loadState('staffList', ['田中', '鈴木', '佐藤']);
-let history   = loadState('salesHistory', []);
+let staffList  = loadState('staffList',    []);
+let itemMaster = loadState('itemMaster',   DEFAULT_ITEMS);
+let history    = loadState('salesHistory', []);
 
 // ══════════════════════════════════════
 //  INIT
@@ -365,6 +390,7 @@ window.addEventListener('DOMContentLoaded', () => {
   addYokeItem();
   renderStaffSelect();
   renderStaffSettings();
+  renderItemMasterSettings();
   renderHistory();
   autoSetPrevBalance();
   setStatus('ready', 'Google Drive に接続済み');
@@ -387,7 +413,7 @@ function currentKey() { return document.getElementById('keyBadge').textContent; 
 //  DATE
 // ══════════════════════════════════════
 function toDateStr(d) { return d.toISOString().slice(0,10); }
-function setToday() { document.getElementById('date').value = toDateStr(new Date()); }
+function setToday()   { document.getElementById('date').value = toDateStr(new Date()); }
 function shiftDate(delta) {
   const d = new Date(document.getElementById('date').value + 'T00:00:00');
   d.setDate(d.getDate() + delta);
@@ -399,7 +425,7 @@ function shiftDate(delta) {
 // ══════════════════════════════════════
 function autoSetPrevBalance() {
   if (history.length === 0) return;
-  const last = history[history.length - 1];
+  const last   = history[history.length - 1];
   const zankin = last.zankin ?? last.grandTotal ?? 0;
   document.getElementById('prevBalance').value = zankin;
   document.getElementById('prevHint').textContent = `直前の伝票（${last.date}）の残金: ¥${fmt(zankin)}`;
@@ -423,29 +449,37 @@ function renderStaffSelect() {
 function renderStaffSettings() {
   const ul = document.getElementById('staffList');
   ul.innerHTML = '';
+  if (staffList.length === 0) {
+    ul.innerHTML = '<li style="padding:12px 14px;color:var(--text3);font-size:13px">担当者が登録されていません</li>';
+    return;
+  }
   staffList.forEach((s, i) => {
     ul.innerHTML += `<li class="staff-item"><span>${s}</span><button onclick="removeStaff(${i})">×</button></li>`;
   });
 }
 function addStaff() {
-  const inp = document.getElementById('newStaffInput');
+  const inp  = document.getElementById('newStaffInput');
   const name = inp.value.trim();
-  if (!name || staffList.includes(name)) { showToast('名前が空または重複しています', 'error'); return; }
+  if (!name)                  { showToast('名前を入力してください', 'error'); return; }
+  if (staffList.includes(name)) { showToast('すでに登録されています', 'error'); return; }
   staffList.push(name);
   saveState('staffList', staffList);
   inp.value = '';
   renderStaffSelect();
   renderStaffSettings();
+  showToast(`「${name}」を追加しました`, 'success');
 }
 function removeStaff(i) {
+  const name = staffList[i];
   staffList.splice(i, 1);
   saveState('staffList', staffList);
   renderStaffSelect();
   renderStaffSettings();
+  showToast(`「${name}」を削除しました`);
 }
 async function fetchStaffFromGAS() {
   try {
-    const res = await fetch(GAS_URL + '?action=getStaff');
+    const res  = await fetch(GAS_URL + '?action=getStaff');
     const data = await res.json();
     if (data.staff && Array.isArray(data.staff) && data.staff.length > 0) {
       staffList = data.staff;
@@ -460,34 +494,112 @@ async function fetchStaffFromGAS() {
 }
 
 // ══════════════════════════════════════
-//  ITEMS
+//  ITEM MASTER
+// ══════════════════════════════════════
+function renderItemMasterSettings() {
+  const ul = document.getElementById('itemMasterList');
+  ul.innerHTML = '';
+  itemMaster.forEach((item, i) => {
+    ul.innerHTML += `
+      <li class="item-master-row">
+        <span class="im-name">${item.name}</span>
+        ${item.free
+          ? '<span class="im-tag">手入力</span>'
+          : `<span class="im-price">¥${fmt(item.price)}</span>`}
+        <button onclick="removeItemMaster(${i})" title="削除">×</button>
+      </li>`;
+  });
+}
+function addItemMaster() {
+  const name  = document.getElementById('newItemName').value.trim();
+  const price = parseInt(document.getElementById('newItemPrice').value) || 0;
+  const free  = document.getElementById('newItemFree').checked;
+  if (!name) { showToast('品目名を入力してください', 'error'); return; }
+  if (itemMaster.some(m => m.name === name)) { showToast('同じ品目名が存在します', 'error'); return; }
+  itemMaster.push({ name, price: free ? 0 : price, free });
+  saveState('itemMaster', itemMaster);
+  document.getElementById('newItemName').value  = '';
+  document.getElementById('newItemPrice').value = '';
+  document.getElementById('newItemFree').checked = false;
+  renderItemMasterSettings();
+  // 既存の品目セレクトを再描画
+  document.querySelectorAll('.item-name-select').forEach(refreshItemSelect);
+  showToast(`「${name}」を追加しました`, 'success');
+}
+function removeItemMaster(i) {
+  const name = itemMaster[i].name;
+  itemMaster.splice(i, 1);
+  saveState('itemMaster', itemMaster);
+  renderItemMasterSettings();
+  document.querySelectorAll('.item-name-select').forEach(refreshItemSelect);
+  showToast(`「${name}」を削除しました`);
+}
+
+// ── 品目selectを最新マスタで再構築 ──
+function refreshItemSelect(sel) {
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">品名を選択</option>'
+    + itemMaster.map(m => `<option value="${m.name}">${m.name}${m.free ? '' : '　¥'+fmt(m.price)}</option>`).join('');
+  if (cur) sel.value = cur;
+}
+
+// ── 品目選択時：単価を自動セット / 手入力切り替え ──
+function onItemNameChange(sel) {
+  const row   = sel.closest('.item-row');
+  const name  = sel.value;
+  const master = itemMaster.find(m => m.name === name);
+  const priceInp = row.querySelector('.item-price');
+
+  if (!master || !name) {
+    priceInp.value    = 0;
+    priceInp.readOnly = false;
+    priceInp.style.background = '';
+    priceInp.placeholder = '単価';
+  } else if (master.free) {
+    priceInp.value    = '';
+    priceInp.readOnly = false;
+    priceInp.style.background = '#fff';
+    priceInp.placeholder = '単価を入力';
+    priceInp.focus();
+  } else {
+    priceInp.value    = master.price;
+    priceInp.readOnly = true;
+    priceInp.style.background = 'var(--surface2)';
+    priceInp.placeholder = '';
+  }
+  recalc();
+}
+
+// ══════════════════════════════════════
+//  ITEMS （売上明細）
 // ══════════════════════════════════════
 function addItem() {
-  const c = document.getElementById('itemsContainer');
-  const idx = c.children.length;
+  const c   = document.getElementById('itemsContainer');
   const row = document.createElement('div');
   row.className = 'item-row';
   row.innerHTML = `
-    <select class="item-name" onchange="recalc()">
+    <select class="item-name-select" onchange="onItemNameChange(this)">
       <option value="">品名を選択</option>
-      ${ITEM_OPTIONS.map(o=>`<option value="${o}">${o}</option>`).join('')}
+      ${itemMaster.map(m=>`<option value="${m.name}">${m.name}${m.free?'':'　¥'+fmt(m.price)}</option>`).join('')}
     </select>
-    <input type="number" class="item-qty" value="1" min="1" oninput="recalc()">
-    <input type="number" class="item-price" value="0" min="0" oninput="recalc()">
-    <span class="subtotal">¥0</span>
+    <div class="item-col">
+      <input type="number" class="item-qty" value="1" min="1" oninput="recalc()">
+    </div>
+    <div class="item-col">
+      <input type="number" class="item-price" value="0" min="0" readonly
+             style="background:var(--surface2)" placeholder="単価" oninput="recalc()">
+      <span class="subtotal-disp">¥0</span>
+    </div>
     <button class="del-btn" onclick="removeItem(this)">✕</button>`;
   c.appendChild(row);
 }
-function removeItem(btn) {
-  btn.closest('.item-row').remove();
-  recalc();
-}
+function removeItem(btn) { btn.closest('.item-row').remove(); recalc(); }
 
 // ══════════════════════════════════════
 //  YOKE ITEMS
 // ══════════════════════════════════════
 function addYokeItem() {
-  const c = document.getElementById('yokeItemsContainer');
+  const c   = document.getElementById('yokeItemsContainer');
   const row = document.createElement('div');
   row.className = 'yoke-item-row';
   row.innerHTML = `
@@ -507,7 +619,7 @@ function syncYokeName() {
 }
 
 // ══════════════════════════════════════
-//  KENZAN TABLE BUILD
+//  KENZAN TABLE
 // ══════════════════════════════════════
 function buildKenzanTable() {
   const tbody = document.getElementById('kenzanBody');
@@ -529,17 +641,18 @@ function buildKenzanTable() {
 function recalc() {
   let sales = 0;
   document.querySelectorAll('.item-row').forEach(row => {
-    const qty   = parseInt(row.querySelector('.item-qty')?.value) || 0;
+    const qty   = parseInt(row.querySelector('.item-qty')?.value)   || 0;
     const price = parseInt(row.querySelector('.item-price')?.value) || 0;
     const sub   = qty * price;
-    row.querySelector('.subtotal').textContent = '¥' + fmt(sub);
+    const disp  = row.querySelector('.subtotal-disp');
+    if (disp) disp.textContent = '¥' + fmt(sub);
     sales += sub;
   });
   const prev  = parseInt(document.getElementById('prevBalance').value) || 0;
   const grand = sales + prev;
-  document.getElementById('salesTotal').textContent     = '¥' + fmt(sales);
+  document.getElementById('salesTotal').textContent      = '¥' + fmt(sales);
   document.getElementById('prevBalanceDisp').textContent = '¥' + fmt(prev);
-  document.getElementById('grandTotal').textContent     = '¥' + fmt(grand);
+  document.getElementById('grandTotal').textContent      = '¥' + fmt(grand);
   recalcKenzan();
 }
 
@@ -554,7 +667,6 @@ function recalcKenzan() {
   });
   document.getElementById('kenzanTotal').textContent = '¥' + fmt(total);
 
-  // 不明金 = 検算合計② − 総合計①
   const grandVal = parseFmt(document.getElementById('grandTotal').textContent);
   const fumei    = total - grandVal;
   const fumeiEl  = document.getElementById('fumeiVal');
@@ -568,7 +680,7 @@ function recalcYoke() {
   let yokeSum = 0;
   document.querySelectorAll('.yoke-item-row').forEach(row => {
     const d   = parseInt(row.querySelector('.yoke-denom')?.value) || 0;
-    const qty = parseInt(row.querySelector('.yoke-qty')?.value) || 0;
+    const qty = parseInt(row.querySelector('.yoke-qty')?.value)   || 0;
     const sub = d * qty;
     row.querySelector('.yoke-unit-disp').textContent = '¥' + fmt(d);
     row.querySelector('.yoke-sub-disp').textContent  = '¥' + fmt(sub);
@@ -576,10 +688,10 @@ function recalcYoke() {
   });
   const kenzanTotal = parseFmt(document.getElementById('kenzanTotal').textContent);
   const zankin      = kenzanTotal - yokeSum;
-  document.getElementById('yokeTotal').textContent    = '¥' + fmt(yokeSum);
+  document.getElementById('yokeTotal').textContent     = '¥' + fmt(yokeSum);
   document.getElementById('yokeTotalDisp').textContent = '¥' + fmt(yokeSum);
-  document.getElementById('zankinVal').textContent    = '¥' + fmt(zankin);
-  document.getElementById('zankinDisp').textContent  = '¥' + fmt(zankin);
+  document.getElementById('zankinVal').textContent     = '¥' + fmt(zankin);
+  document.getElementById('zankinDisp').textContent    = '¥' + fmt(zankin);
 }
 
 // ══════════════════════════════════════
@@ -593,8 +705,8 @@ async function save() {
 
   const items = [];
   document.querySelectorAll('.item-row').forEach(row => {
-    const name  = row.querySelector('.item-name')?.value;
-    const qty   = parseInt(row.querySelector('.item-qty')?.value) || 0;
+    const name  = row.querySelector('.item-name-select')?.value;
+    const qty   = parseInt(row.querySelector('.item-qty')?.value)   || 0;
     const price = parseInt(row.querySelector('.item-price')?.value) || 0;
     if (name && qty > 0) items.push({ name, qty, price, subtotal: qty * price });
   });
@@ -602,7 +714,7 @@ async function save() {
   const yokeItems = [];
   document.querySelectorAll('.yoke-item-row').forEach(row => {
     const denom = parseInt(row.querySelector('.yoke-denom')?.value) || 0;
-    const qty   = parseInt(row.querySelector('.yoke-qty')?.value) || 0;
+    const qty   = parseInt(row.querySelector('.yoke-qty')?.value)   || 0;
     if (qty > 0) yokeItems.push({ denom, qty, subtotal: denom * qty });
   });
 
@@ -622,43 +734,32 @@ async function save() {
   const fumei       = kenzanTotal - grandTotal;
 
   const payload = {
-    key: currentKey(),
-    date, staff,
-    prevBalance, items, salesTotal, grandTotal,
+    key: currentKey(), date, staff, prevBalance, items, salesTotal, grandTotal,
     memo: document.getElementById('memo').value,
     kenzan: { items: kenzanItems, total: kenzanTotal },
-    fumei,
-    fumeiMemo: document.getElementById('fumeiMemo').value,
+    fumei, fumeiMemo: document.getElementById('fumeiMemo').value,
     yoke: { items: yokeItems, total: yokeTotal, person: document.getElementById('yokePersonName').value },
     zankin
   };
 
   const btn = document.getElementById('saveBtn');
-  btn.disabled = true;
-  btn.textContent = '保存中...';
+  btn.disabled = true; btn.textContent = '保存中...';
 
   try {
     await fetch(GAS_URL, {
-      method: 'POST',
-      mode: 'no-cors',
+      method: 'POST', mode: 'no-cors',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
-    // ローカル履歴に保存
     history.push(payload);
     saveState('salesHistory', history);
     renderHistory();
     showToast('✅ 保存しました', 'success');
-    // 新しい伝票用に初期化
-    setTimeout(() => {
-      generateKey();
-      autoSetPrevBalance();
-    }, 600);
+    setTimeout(() => { generateKey(); autoSetPrevBalance(); }, 600);
   } catch(e) {
     showToast('❌ 保存に失敗しました: ' + e.message, 'error');
   } finally {
-    btn.disabled = false;
-    btn.textContent = '📤 Google Driveに保存';
+    btn.disabled = false; btn.textContent = '📤 Google Driveに保存';
   }
 }
 
@@ -683,7 +784,7 @@ function renderHistory() {
       <div class="hi-amounts">
         <span>売上① <strong>¥${fmt(h.salesTotal)}</strong></span>
         <span>検算② <strong>¥${fmt(h.kenzan?.total ?? 0)}</strong></span>
-        <span>不明金 <strong style="color:${h.fumei!==0?'var(--danger)':'inherit'}">${h.fumei>=0?'+':''}¥${fmt(h.fumei??0)}</strong></span>
+        <span>不明金 <strong style="color:${(h.fumei??0)!==0?'var(--danger)':'inherit'}">${(h.fumei??0)>=0?'+':''}¥${fmt(h.fumei??0)}</strong></span>
         <span>よけ③ <strong>¥${fmt(h.yoke?.total ?? 0)}</strong></span>
         <span>残金④ <strong style="color:var(--accent)">¥${fmt(h.zankin ?? 0)}</strong></span>
       </div>
@@ -693,26 +794,26 @@ function renderHistory() {
 // ══════════════════════════════════════
 //  UTILS
 // ══════════════════════════════════════
-function fmt(n) { return Number(n).toLocaleString('ja-JP'); }
-function parseFmt(s) { return parseInt(s.replace(/[¥,+]/g, '')) || 0; }
+function fmt(n)       { return Number(n).toLocaleString('ja-JP'); }
+function parseFmt(s)  { return parseInt(String(s).replace(/[¥,+]/g, '')) || 0; }
 function setStatus(type, msg) {
   document.getElementById('statusText').textContent = msg;
-  document.getElementById('statusDot').className = 'status-dot' + (type === 'warn' ? ' warn' : '');
+  document.getElementById('statusDot').className   = 'status-dot' + (type === 'warn' ? ' warn' : '');
 }
 function showToast(msg, type = '') {
   const t = document.getElementById('toast');
   t.textContent = msg;
-  t.className = 'show ' + type;
+  t.className   = 'show ' + type;
   setTimeout(() => t.className = '', 2800);
 }
 function switchTab(name) {
-  document.querySelectorAll('.tab').forEach((t,i) => {
-    const names = ['input','history','settings'];
-    t.classList.toggle('active', names[i] === name);
+  document.querySelectorAll('.tab').forEach((t, i) => {
+    t.classList.toggle('active', ['input','history','settings'][i] === name);
   });
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.getElementById('page-' + name).classList.add('active');
-  if (name === 'history') renderHistory();
+  if (name === 'history')  renderHistory();
+  if (name === 'settings') { renderStaffSettings(); renderItemMasterSettings(); }
 }
 </script>
 </body>
